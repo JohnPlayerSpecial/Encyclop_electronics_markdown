@@ -957,3 +957,81 @@ Whereas an integrated circuit such as a 555 timer generates a square wave, uniju
 The PUT is often used to trigger a thyristor (described in Volume 2) and has applications in lowpower circuits, where it can draw as little as a few microamps.
 Schematic symbols for the two components are shown in Figure 27-1 and Figure 27-2. Although the symbol for the UJT is very similar to the symbol for a field-effect transistor (FET), its behavior is quite different. The bent arrow identifies the UJT, while a straight arrow identifies the FET. This difference is of significant importance.
 ![](images/29October2019_22h06m.png)
+
+The UJT is a three-terminal semiconductor device, but contains only two sections sharing a single junction—hence its name. Leads attached to opposite ends of a single channel of N-type semiconductor are referred to as base 1 and base 2, with base 2 requiring a slightly higher potential than base 1. A smaller P-type insert, midway between base 1 and base 2, is known as the emitter.
+When no voltage is applied to the emitter, a relatively high resistance (usually more than 5K) prevents significant current flow from base 2 to base 1. When the positive potential at the emitter increases to a triggering voltage (similar to the junction threshold voltage of a forward-biased diode), the internal resistance of the UJT drops very rapidly, allowing current to enter the component via both the emitter and base 2, exiting at base 1. (The term “current” refers, here, to conventional current; electron flow is opposite.) Current flowing from base 2 to base 1 is significantly greater than current flowing from the emitter to base 1.
+![](file:///C:/Users/f126ck/Desktop/markEd/images/29October2019_22h40m.png)
+
+![](file:///C:/Users/f126ck/Desktop/markEd/images/01November2019_11h30m.png)
+
+A PUT behaves similarly in many ways to a UJT but is internally quite different, consisting of four semiconducting layers and functioning similarly to a thyristor
+
+The PUT is triggered by increasing the voltage on the anode
+This component is triggered when the voltage at its anode exceeds a threshold level, while the gate sets the threshold where this occurs
+
+This behavior is almost identical to that of a forward-biased diode, except that the threshold level can be controlled, or “programmed,” according to the value of the positive potential applied at the gate, with R1 and R2 establishing that potential by functioning as a voltage divider.
+
+![](file:///C:/Users/f126ck/Desktop/markEd/images/01November2019_11h33m.png)
+
+The triggering voltage of a UJT can be calculated from the values of R1 and R2 in Figure 27-7 and the voltage at base 1. The term Rbb is often used to represent the sum of R1 + R2, with Vbb representing the total voltage across the two resistors (this is the same as the supply voltage in Figure 27-6). Vt, the triggering voltage, is given by:
+Vt = Vbb * (  R1 / Rbb )
+
+**A programmable unijunction transistor (PUT) is sometimes referred to simply as a “unijunction transistor” (UJT). Bearing in mind the totally different modes of operation of UJT and PUT, the PUT should always be identified by its acronym or by its full name. A circuit will not function if a UJT is substituted for a PUT, or a PUT is substituted for a UJT. **
+
+Incorrect Bias
+Neither the UJT nor the PUT is designed to operate with reverse bias. In the UJT, a small forward bias should be applied from base 2 to base 1 (that is, base 2 should be at a higher potential relative to base 1) regardless of the voltage on the emitter. The emitter voltage may vary from 0 volts upward. The PUT must be forward biased between its anode and cathode (the anode must have a higher potential relative to the cathode), with an intermediate positive voltage at the gate established by resistors R1 and R2 functioning as a voltage divider (see Figure 27-7). Failure to observe correct biasing will result in unpredictable behavior and possible damage to the component.
+
+# Transistor
+A bipolar NPN transistor consists of a thin central P-type layer sandwiched between two thicker Ntype layers. The three layers are referred to as collector, base, and emitter, with a wire or contact attached to each of them. When a negative charge is applied to the emitter, electrons are forced by mutual repulsion toward the central base layer. If a forward bias (positive potential) is applied to the base, electrons will tend to be attracted out through the base. However, because the base layer is so thin, the electrons are now close to the collector. If the base voltage increases, the additional energy encourages the electrons to jump into the collector, from which they will make their way to the positive current source, which can be thought of as having an even greater deficit of electrons.
+
+**NPN transistors enable faster switching, because electrons have greater mobility than electron-holes **
+
+Current flow for NPN and PNP transistors is illustrated in Figure 28-2. At top-left, an NPN transistor passes no current (other than a small amount of leakage) from its collector to its emitter so long as its base is held at, or near, the potential of its emitter, which in this case is tied to negative or ground. At bottom-left, the purple positive symbol indicates that the base is now being held at a relatively positive voltage, at least 0.6 volts higher than the emitter (for a silicon-based transistor). This enables electrons to move from the emitter to the collector, in the direction of the blue arrows, while the red arrows indicate the conventional concept of current flowing from positive to negative. The smaller arrows indicate a smaller flow of current. A resistor is included to protect the transistor from excessive current, and can be thought of as the load in these circuits. At top-right, a PNP transistor passes no current (other than a small amount of leakage) from its emitter to its collector so long as its base is held at, or near, the potential of the emitter, which in this case is tied to the positive power supply. At bottom-right, the purple negative symbol indicates that the base is now being held at a relatively negative voltage, at least 0.6 volts lower than the emitter. This enables electrons and current to flow as shown. Note that current flows into the base in the NPN transistor, but out from the base in the PNP transistor, to enable conductivity. In both diagrams, the resistor that would normally be included to protect the base has been omitted for the sake of simplicity.
+An NPN transistor amplifies its base current only so long as the positive potential applied to the collector is greater than the potential applied to the base, and the potential at the base must be greater than the potential at the emitter by at least 0.6 volts
+
+A voltage divider is often used to control the base potential and ensure that it remains less than the potential on the collector and greater than the potential at the emitter (in an NPN transistor)
+
+Small signal transistors are defined as having a maximum collector current of 500 mA and maximum collector power dissipation of 1 watt. They can be used for audio amplification of low-level inputs and for switching of small currents. When determining whether a small-signal transistor can control an inductive load such as a motor or relay coil, bear in mind that the initial current surge will be greater than the rated current draw during sustained operation.
+
+second breakdown limit. The latter refers to the tendency of a transistor to develop internal localized “hot spots” that tend to conduct more current, which makes them hotter, and able to conduct better—ultimately melting the silicon and causing a short circuit. The total power limit and the second breakdown limit reduce the safe operating area, which would otherwise be defined purely by maximum safe current and maximum safe voltage.
+
+## Darlington
+A Darlington pair of transistors may be used in this application. The overall gain of the pair can be 100,000 or more. 
+
+In the application shown here, the microcontroller chip must share a common ground (not shown) with the transistors
+
+The device can have its own positive supply voltage, shown here as 12VDC, but must share a common ground with the microcontroller, or with any other component which is being used on the input side.
+
+The common-collector configuration has current gain but no voltage gain. 
+
+**Rohm, a large semiconductor manufacturer, has included this scenario in its general information pages and concludes that the primary indicator of transposed connections is that the β value, or hFE , drops to about 1/10th of specification. If you are using a transistor that works but provides much less amplification than you expect, check that the emitter and collector leads are not transposed **
+
+#FET
+JFETs A junction field-effect transistor (or JFET) is the simplest form of FET. Just as a bipolar transistor can be of NPN or PNP type, a JFET can have an Nchannel or P-channel, depending whether the channel that transmits current through the device is negatively or positively doped.
+![](file:///C:/Users/f126ck/Desktop/markEd/images/01November2019_12h08m.png) 
+
+The JFET is like a normally-closed switch. It has a low resistance so long as the gate is at the same potential as the source. However, if the potential of the gate is reduced below the potential of the source—that is, the gate acquires a more relatively negative voltage than the source—the current flow is pinched off as a result of the field created by the gate. This is suggested by the lower diagram in Figure 29-4.
+
+A bipolar transistor tends to block current flow by default, but becomes less resistive when its base is forward-biased.
+Therefore it can be referred to as an enhancement device. By contrast, an N-channel JFET allows current to flow by default, and becomes more resistive when its base is reverse-biased, which widens the depletion layer at the base junction. Consequently it can be referred to as a depletion device.
+Suppose the gate of an N-channel JFET is connected with the source, so that Vgs=0. Now if Vds increases, the current flowing through the channel of the JFET also increases, approximately linearly with Vds. In other words, initially the JFET behaves like a low-value resistor in which the voltage across it, divided by the amperage flowing through it, is approximately constant. This phase of the JFET’s behavior is known as its ohmic region. While the unbiased resistance of the channel in a JFET depends on the component type, it is generally somewhere between 10Ω and 1K.
+
+##MESFET 
+The acronym stands for MEtal-Semiconductor Field Effect Transistor. This FET variant is fabricated from gallium arsenide and is used primarily in radio frequency amplification
+## V-Channel MOSFET
+It is able to pass the high current because its channel resistance is well under 1Ω. These devices, commonly referred to as power MOSFETs, are available from all primary semiconductor manufacturers and are commonly used in switching power supplies
+
+## Trench MOS
+ The TrenchMOS or Trenchgate MOS is a MOSFET variant that encourages current to flow vertically rather than horizontally, and includes other innovations that enable an even lower channel resistance, allowing high currents with minimal heat generation. This device is finding applications in the automobile industry as a replacement for electromechanical relays.
+
+## Static Electricity
+Because the gate of a MOSFET is insulated from the rest of the component, and functions much like a plate of a capacitor, it is especially likely to accumulate static electricity. This static charge may then discharge itself into the body of the component, destroying it.
+
+
+
+
+
+
+# END BOOK 1
+
+#START BOOK 2
