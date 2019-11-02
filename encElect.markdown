@@ -1035,3 +1035,100 @@ Because the gate of a MOSFET is insulated from the rest of the component, and fu
 # END BOOK 1
 
 #START BOOK 2
+
+#SCR
+An SCR is a solid-state switch that in many instances can pass high currents at high voltages.
+Like a bipolar transistor, it is triggered by voltage applied to a gate. Unlike the transistor, it allows the flow of current to continue even when the gate voltage diminishes to zero.
+By comparison, the diac and triac are designed to be bidirectional.
+When the SCR is activated by a positive voltage at the gate, current can now flow from anode to cathode, although it is still blocked from cathode to anode.
+When the flow reaches a level known as the latching current, the flow will continue even after the triggering voltage drops to zero
+
+This behavior causes it to be known as a regenerative device.
+If the current between anode and cathode starts to diminish while the gate voltage remains zero, the current flow will continue below the latching level until it falls below the value known as the holding current. The flow now ceases. Thus, the only way to end a flow of current that has been initiated through an SCR is by reducing the flow or attempting to reverse it.
+Unlike a transistor, an SCR is either “on” or “off” and does not function as a current amplifier
+The fast switching response also enables an SCR to interrupt and abbreviate each positive phase of an AC waveform, to reduce the average power supplied. This is known as phase control.
+**SCRs are also used to provide overvoltage protection.**
+Among its applications are small-engine ignition and crowbar overvoltage protection, so named because it shorts a power supply directly to ground, much like a crowbar being dropped across the terminals of a car battery (but hopefully with a less dramatic outcome)
+![](file:///C:/Users/f126ck/Desktop/markEd/images/02November2019_10h49m.png)
+### Crowbar 
+A crowbar circuit is an electrical circuit used for preventing an overvoltage condition of a power supply unit from damaging the circuits attached to the power supply. It operates by putting a short circuit or low resistance path across the voltage output (Vo), quite like were one to drop a crowbar across the output terminals of the power supply. Crowbar circuits are frequently implemented using a thyristor, TRIAC, trisil or thyratron as the shorting device. Once triggered, they depend on the current-limiting circuitry of the power supply or, if that fails, the blowing of the line fuse or tripping the circuit breaker. 
+An example crowbar circuit is shown to the right. This particular circuit uses an LM431 adjustable zener regulator to control the gate of the TRIAC. The resistor divider of R1 and R2 provide the reference voltage for the LM431. The divider is set so that during normal operating conditions, the voltage across R2 is slightly lower than VREF of the LM431. Since this voltage is below the minimum reference voltage of the LM431, it remains off and very little current is conducted through the LM431. If the cathode resistor is sized accordingly, very little voltage will be dropped across it and the TRIAC gate terminal will be essentially at the same potential as MT1, keeping the TRIAC off. If the supply voltage increases, the voltage across R2 will exceed VREF and the LM431 cathode will begin to draw current. The voltage at the gate terminal will be pulled down, exceeding the gate trigger voltage of the TRIAC and latching it on. 
+Thus, a crowbar will not automatically return to normal operation when the overvoltage condition is removed; power must be removed entirely to stop its conduction. 
+An active crowbar is a crowbar that can remove the short circuit when the transient is over thus allowing the device to resume normal operation. Active crowbars use a transistor, gate turn off (GTO) thyristor or forced commutated thyristor instead of a thyristor to short the circuit. Active crowbars are commonly used to protect the frequency converter in the rotor circuit of doubly fed generators against high voltage and current transients caused by the voltage dips in the power network. Thus the generator can ride through the fault and quickly continue the operation even during the voltage dip.
+Using a transistor instead of a thyristor or triac would not be so easy, since the power supply necessary to drive the base or gate of the transistor goes away when the supply is shorted, whereas the thyristor or triac needs no further gate drive to stay on once triggered. This is the reason why thyristors and triacs are so widely used in this application.
+One property of crowbar circuits that is often an advantage is that it becomes very evident that something is wrong and needs fixing once it has triggered. 
+
+http://www.learningelectronics.net/circuits/adjustable-zener-diode_19.html
+
+## Internal config
+The function of an SCR can be imagined as being similar to that of a PNP transistor paired with an NPN transistor, as shown in Figure 1-6. In this simplified schematic, so long as zero voltage is applied to the “gate” wire, the lower (NPN) transistor remains nonconductive.
+
+### Clamp
+A clamper is an electronic circuit that fixes either the positive or the negative peak excursions of a signal to a defined value by shifting its DC value[2]. The clamper does not restrict the peak-to-peak excursion of the signal, it moves the whole signal up or down so as to place the peaks at the reference level. A diode clamp (a simple, common type) consists of a diode, which conducts electric current in only one direction and prevents the signal exceeding the reference value; and a capacitor, which provides a DC offset from the stored charge. The capacitor forms a time constant with the resistor load, which determines the range of frequencies over which the clamper will be effective. 
+
+### Low Voltage ride through
+Many generator designs use electric current flowing through windings to produce the magnetic field on which the motor or generator operates. This is in contrast to designs that use permanent magnets to generate this field instead. Such devices may have a minimum working voltage, below which the device does not work correctly, or does so at greatly reduced efficiency. Some will disconnect themselves from the circuit when these conditions apply. The effect is more pronounced in doubly-fed induction generators (DFIG)[3], which have two sets of powered magnetic windings, than in squirrel-cage induction generators which have only one. Synchronous generators may slip and become unstable, if the voltage of the stator winding goes below a certain threshold.
+![](file:///C:/Users/f126ck/Desktop/markEd/images/02November2019_11h07m.png)
+Consequently, the upper (PNP) transistor cannot sink current, and this transistor also remains nonconductive.
+When voltage is applied to the “gate,” the lower transistor starts to sink current from the upper transistor. This switches it on. The two transistors
+now continue to conduct even if power to the “gate” is disconnected, because they have created a positive feedback loop.
+![](file:///C:/Users/f126ck/Desktop/markEd/images/02November2019_11h09m.png)
+## SCR Concept Demo 
+In Figure 1-9, pushbutton S1 applies voltage to the gate of the SCR, which puts the SCR in selfsustaining conductive mode. When S1 is released, the meter will show that current continues to pass between the anode and the cathode. The X0403DF SCR suggested for this circuit has a holding current of 5mA, which a 5VDC supply should be able to provide with the 1K resistor in the circuit. If necessary, this resistor can be reduced to 680Ω.
+Now if pushbutton S2 is pressed, the flow is interrupted. When S2 is released, the flow will not resume. Alternatively, if pushbutton S3 is pressed while the SCR is conducting current, the flow is diverted around the SCR, and when the pushbutton is released, the flow through the SCR will not resume. Thus, the SCR can be shut down either by a normally closed pushbutton in series with it (which will interrupt the current), or a normally open pushbutton in parallel with it (which will divert the current).
+![](file:///C:/Users/f126ck/Desktop/markEd/images/02November2019_11h14m.png)
+
+Any SCR will impose a forward voltage drop, which typically ranges from around 1V to 2V, depending on the component.
+Leakage in the “off” state may be as high as 0.5mA or as low as 5µA. Gate trigger voltage is likely to range from 0.8V to 1.5V, and trigger current of 0.2mA to 15mA is typical.
+
+Although other applications are possible, in practice SCRs have two main applications:
+• Phase control, which interrupts each positive phase of an AC power supply. It can moderate the speed of a motor or the heat generated by a resistive load.
+• Overvoltage protection. This can safeguard sensitive components in a circuit where there is a DC power supply.
+
+Phase Control Phase control is a convenient way to control or limit the AC power delivered to a load by abbreviating each pulse in the AC waveform. This is done by adjusting the gate voltage so that the SCR blocks the first part of each positive phase, then conducts the remainder, and then stops conducting below its holding level. The SCR will then block the reversed flow in the negative phase of the AC waveform, but an additional SCR with opposite polarity can be added.
+This is a form of pulse-width modulation.
+
+Six SCRs may be used to control three-phase power.
+
+**A very rapid increase in forward voltage at the anode can induce a triggering voltage in the gate by capacitive coupling. As a result, the SCR can trigger itself without any external application of gate voltage. This is sometimes known as dv/dt triggering. If necessary, a snubber circuit can be added across the anode input to prevent sudden voltage transitions. **
+![](file:///C:/Users/f126ck/Desktop/markEd/images/02November2019_14h47m.png)
+
+
+# Diac
+The diac is a bidirectional thyristor with only two terminals. It blocks current until it is subjected to sufficient voltage, at which point its impedance drops very rapidly. It is primarily used to trigger a triac for purposes of moderating AC power to an incandescent lamp, a resistive heating element, or an AC motor. The two leads on a diac have identical function and are interchangeable.
+By comparison, a triac and an SCR are thyristors with three leads, one of them being referred to as the gate, which determines whether the component becomes conductive. A triac and a diac allow current to flow in either direction, while an SCR always blocks current in one direction.
+
+Because its two leads are functionally identical, they do not require names to differentiate them. They are sometimes referred to as A1 and A2, in recognition that either of them may function as an anode; or they may be identified as MT1 and MT2, MT being an acronym for “main terminal.”
+
+When only a moderate voltage is applied (usually less than 30V) the diac remains in a passive state and will block current in either direction, although a very small amount of leakage typically occurs. When the voltage exceeds a threshold known as its breakover level, current can flow, and the diac will continue to conduct until the current falls below its holding level
+The diac cannot function as a switch, because it lacks the third terminal which is found in a triac, an SCR, or a bipolar transistor. However, it is well suited to drive the gate of a triac, because the behavior of a diac is symmetrical in response to opposite voltages, while the triac is not.
+This is known as phase control, as it controls the phase angle at which the diac allows current to flow.
+A **sidac** behaves very similarly to a diac, its name being derived from “silicon diode for alternating current.” Its primary difference from generic diacs is that it is designed to reach its breakover voltage at a higher value, typically 120VAC or 240VAC.
+When performing its function to trigger a triac, a diac is unlikely to pass more than 100mA.
+
+On a datasheet, a value for breakover current is valid only within a recommended temperature range. A buildup of heat can provoke unexpected triggering.
+![](file:///C:/Users/f126ck/Desktop/markEd/images/02November2019_15h01m.png)
+
+## Symbol of diac
+![](file:///C:/Users/f126ck/Desktop/markEd/images/02November2019_15h02m.png)
+
+# TRIAC
+The triac is ubiquitous in AC dimmers for incandescent lamps. It is also used to control the speed of AC motors and the output of resistive heating elements. It is a type of thyristor which contains five segments of p-type and n-type silicon and has three leads, one of them attached to a gate that can switch a bidirectional flow of current between the other two. Its name was originally a trademark, generally thought to be derived from the phrase “triode for AC.”
+**An SCR (silicon-controlled rectifier) is a thyristor that resembles a triac, as it has three leads, one of them a gate. However, it only allows current to flow in one direction.**
+
+![](file:///C:/Users/f126ck/Desktop/markEd/images/02November2019_17h01m.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
