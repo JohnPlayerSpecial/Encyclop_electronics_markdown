@@ -206,14 +206,14 @@ bearing rolls to either end of a central rocker arm
 when the switch is turned. Rocker switches are
 often used as power on-off switches.
 
-![](images/04October2019_17h06m.png)
+<img src="images/04October2019_17h06m.png" style="zoom:50%;" />
 
 ## Toggle Switch
-![](images/04October2019_17h10m.png)
+<img src="images/04October2019_17h10m.png" style="zoom:50%;" />
 
 
 ## SIP & DIP
-![](images/04October2019_17h15m.png ) ![](images/04October2019_17h15xcm.png)
+<img src="images/04October2019_17h15m.png" style="zoom:50%;" /> <img src="images/04October2019_17h15xcm.png" style="zoom:50%;" />
 
 An application for two limit switches with a DC
 motor and two rectifier diodes is shown in
@@ -248,14 +248,13 @@ duration, without risk of burnout when the mo­
 tor reaches the end of its travel. It has been used
 for applications such as raising and lowering
 powered windows in an automobile.
-![](images/04October2019_17h24m.png)
+<img src="images/04October2019_17h24m.png" style="zoom:50%;" />
 
 ## Deviatore
 
 
 
-
-![](images/04October2019_17h30m.png)
+<img src="images/04October2019_17h30m.png" style="zoom:50%;" />
 
 ## Arcing
 In DC circuits, arcing can be re­
@@ -275,7 +274,7 @@ is an entirely passive component that does not
 require any additional electronics for its func­
 tionality.
 ## Rotary DIP Switch
-![](images/04October2019_17h43m.png )
+<img src="images/04October2019_17h43m.png" style="zoom:33%;" />
 
 ## Pushwheel and Thumbwheel
 A pushwheel switch is a simple electromechanical
@@ -325,7 +324,7 @@ around 2ms to 5ms, which is sometimes known
 as the **settling time**.
 
 # Relays
-![](images/04October2019_18h20m.png)
+<img src="images/04October2019_18h20m.png" style="zoom:50%;" />
 ##Variants
 ###Latching
 There are two basic types of relay: latching and
@@ -372,7 +371,7 @@ vulnerable to voltage spikes. However, a spike
 can affect components in adjacent circuits that
 appear to be electrically isolated. 
 
-![](images/04October2019_19h09m.png)
+<img src="images/04October2019_19h09m.png" style="zoom:50%;" />
 
 #Resistor
 Resistor arrays with isolated or common-bus
@@ -420,7 +419,7 @@ the center terminal. If the unused end terminal is
 left unconnected, this raises the risk of picking
 up stray voltages or “noise” in sensitive circuits.
 
-![](images/04October2019_19h39m.png)
+<img src="images/04October2019_19h39m.png" style="zoom:50%;" />
 
 ##Ganged Potentiometer
 Two (or rarely, more) potentiometers can be
@@ -632,7 +631,7 @@ and hysteresis, which affect coils with cores, and
 also produces no back-EMF. It simply attenuates
 a signal initially, and then gradually lowers its re­
 actance, thus imitating this aspect of an inductor.
-![](images/05October2019_17h09m.png)
+<img src="images/05October2019_17h09m.png" style="zoom:50%;" />
 However, the performance
 advantages of gyrators are significant, as they
 can emulate high inductance without parasitic
@@ -659,7 +658,7 @@ inductance drops and the charge current rate in­
 creases drastically.
 An inductor can be combined with a capacitor to
 form a bandpass filter,
-![](images/05October2019_17h25m.png)
+<img src="images/05October2019_17h25m.png" style="zoom:50%;" />
 Once again if the location of the components is
 shifted to shunt the signal away from the output,
 the results are reversed, as shown in
@@ -735,7 +734,7 @@ By comparison, a linear regulator is usually based around bipolar transistors. I
 An internal oscillator controls a MOSFET semiconductor that switches the DC input on and off at a high frequency, usually from 50KHz to 1MHz.
 Output voltage is adjusted by varying the duty cycle of the oscillator—the length of each “on” pulse relative to each “off” interval (PWM).
 The duty cycle is controlled by sampling the output of the converter and using a comparator to subtract the output voltage from a reference voltage, to establish an error value. This is passed to another comparator, which subtracts the error voltage from an oscillator ramp signal. If the error increases, the oscillator signal is more heavily clipped, thus changing the effective ratio of on/off pulse lengths. 
-![](images/06October2019_18h24m.png)
+<img src="images/06October2019_18h24m.png" style="zoom:50%;" />
 The key to the efficiency of a DC-DC converter is an inductor, which stores energy in its magnetic field during “on” pulse and releases it in the discharge phase. Thus, the inductor is used as a temporary reservoir and minimizes the ripple current. All converter variants use a coil for this purpose, although its placement varies in relation to the diode and capacitor that complete the basic circuit.
 variable D is the duty cycle in the pulse train generated through an internal MOSFET switch. The duty cycle is the fraction of the total on-off cycle that is occupied by each “on” pulse. In other words, if
 Ton is the duration of an “on” pulse and Toff is the “off” time: 
@@ -743,28 +742,33 @@ D = Ton / ( Ton + Toff )
 ##Buck Converter
  See Figure 17-3. The output voltage is lower than the input voltage. The input and output share a common ground. For this circuit: 
 Vout = Vin * D
-![](images/06October2019_18h28m.png)
+<img src="images/06October2019_18h28m.png" style="zoom:50%;" />
+
 ## Boost Converter
  See Figure 17-4. The output voltage is greater than the input voltage. The input and output share a common ground. For this circuit: 
 Vout = Vin / (1-D)
-![](images/06October2019_18h29m.png)
+<img src="images/06October2019_18h29m.png" style="zoom:50%;" />
+
 ## Flyback Converter with Inductor
 Commonly known as a *buck-boost converter*. See Figure 17-5. The output voltage can be less than or greater than the input voltage. The input and output share a common ground. For this circuit:
 Vout = Vin * ( D / ( 1 - D) )
-![](images/06October2019_18h31m.png)
+<img src="images/06October2019_18h31m.png" style="zoom:50%;" />
+
 ## Flyback Converter with Transformer 
 See Figure 17-6. The output voltage can be less than or greater than the input voltage. The input and output are isolated from one another. For this circuit:
 Vout = Vin * ( D / ( 1 - D) )
-![](images/06October2019_18h32m.png)
+<img src="images/06October2019_18h32m.png" style="zoom:50%;" />
 Using a transformer in the converter allows multiple outputs with different voltages, supplied through multiple transformer windings.
 On a circuit board that is primarily populated with 5VDC components and is fed by a single 5VDC power supply, a converter can be used to supply 12VDC for one special purpose, such as an analog-digital converter or a serial data connection.
+
 # DC-AC inverter
 he inverter receives an input of direct current (typically 12VDC from a car battery) and delivers an output of alternating current (AC) in the range 110VAC-120VAC or 220VAC-240VAC, suitable to power many lowwattage appliances and devices.
 The first stage of an inverter typically raises a 12VDC input to a higher DC voltage via an internal DC-DC converter, then uses a switching circuit to create an approximation of the sinusoidal profile that is characteristic of AC voltage.
 The RMS value is important as a means to calculate actual power delivered because it can be multiplied by the current to obtain an approximate value in watts.
-![](images/06October2019_18h46m.png)
+<img src="images/06October2019_18h46m.png" style="zoom:50%;" />
 As a first step toward a better approximation of a sine wave, gaps of zero voltage can be inserted between square-wave pulses. This “gapped” square wave is shown in Figure 18-3.
-![](images/06October2019_18h47m.png)
+<img src="images/06October2019_18h47m.png" style="zoom:50%;" />
+
 # Voltage Regulator
 A linear voltage regulator provides a tightly controlled DC output, which it derives from an unregulated or poorly regulated DC input. The DC output remains constant regardless of the load on the regulator (within specified limits). It is a cheap, simple, and extremely robust.
 Some voltage regulators include an extra pin, typically known as an enable pin, which switches off the device in response to a signal from a microcontroller or logic gate. Some regulators offer another option, an additional status pin that can signal a microcontroller that an error mode exists if the regulator output falls significantly below its rated value.
@@ -772,7 +776,8 @@ A linear voltage regulator cannot respond instantly to changes in input voltage.
 All linear regulators function by taking some feedback from the output, deriving an error value by comparing the output with a reference voltage (most simply provided by a zener diode), 
 and using the error value to control the base of a pass transistor that is placed between the input and the output of the regulator. Because the transistor operates below saturation level, its output current varies linearly with the current applied to its base, and this behavior gives the linear regulator is name.
 The voltage difference required between the base and emitter of an NPN transistor is a minimum of 0.6V. Because multiple transistors are used inside a standard-type voltage regulator, it requires a minimum total voltage difference, between its input and its output, of 2VDC. This voltage difference is known as the dropout voltage. If the voltage difference falls below this minimum, the regulator ceases to deliver a reliable output voltage until the input voltage rises again. Low dropout regulators allow a lower voltage difference, but are more expensive and less commonly used.
-![](images/06October2019_20h05m.png)
+<img src="images/06October2019_20h05m.png" style="zoom:50%;" />
+
 ## Adjustable Regulators
  While the majority of regulators have a fixed output, some allow the user to set the output by adding one or more resistors.
 The LM317 is a popular example.
@@ -802,9 +807,10 @@ When an AC solenoid reaches the end of its travel, the sudden stop of the plunge
 Generally speaking, the delta configuration is best suited to high-speed applications, but provides relatively low torque at low speed. The wye configuration provides higher torque at low speed, but its top speed is limited.
 In reality, the reduction can be expected to have a fractional component. This is because if two gears have an integer ratio, their operating life will be shortened, as a manufacturing defect in a tooth in the smaller gear will hit the same spots in the larger gear each time it rotates. For this reason, the numbers of teeth in two spur gears usually do not have any common factors (as in the example above), and if a motor rotates at 500 RPM, a gear ratio stated as 50:1 is very unlikely to produce an output of exactly 10 RPM.
 Planetary gears are used primarily if a motor drives a heavy load, as the force is divided among more gear pairs, reducing wear and tear on gear teeth and minimizing the breakdown of lubrication.
-![](images/27October2019_12h38m.png)
+<img src="images/27October2019_12h38m.png" style="zoom:50%;" />
 ##Speed Control
  A rheostat or potentiometer may be placed in series with a traditional DC motor to adjust its speed, but will be inefficient, as it will achieve a voltage drop by generating heat. Any rheostat must be rated appropriately, and should probably be wire-wound. The voltage drop between the wiper and the input terminal of the rheostat should be measured under a variety of operating conditions, along with the amperage in the circuit, to verify that the wattage rating is appropriate.
+
 ## Direction Control 
 The H bridge is a very early system for reversing the direction of a DC motor simply by swapping the polarity of its power supply appropriate.
 This is obviously a primitive scheme, but the term “H bridge” is still used when prepackaged in a single chip such as the LMD18200 H bridge motor controller from National
@@ -838,13 +844,13 @@ An overloaded induction motor may suffer some cracking or breakage of its rotor.
 
 # Servo Motor
 A servo motor is actually a combination of a motor, reduction gearing, and miniaturized control electronics, usually packaged together inside a very compact sealed plastic case. The motor itself may be AC or DC, and if DC, it may be brushed or brushless. What distinguishes a servo from other types of motor is that it is not designed for continuous rotation. It is a position-seeking device. Its rotational range may be more than 180 degrees but will be significantly less than 360 degrees.
-![](images/27October2019_19h35m.png)
+<img src="images/27October2019_19h35m.png" style="zoom:50%;" />
 Inside a servo motor’s casing, the electronics include a potentiometer that turns with the output shaft, to provide feedback confirming the motor’s position. The limited turning range of the potentiometer determines the turn limits of the motor output shaft.
 Karbonite gears are a reinforced plastic composite material used in Hitec RC servos that show almost five times the strength of nylon gears and better wear resistance. Cycle times of over 300,000 have been observed with these gear trains showing virtually no wear. Karbonite-geared servos are more expensive than those using nylon ones but are highly durable.[1] Hobbyists are advised avoid use of thread locking compounds on Karbonite as this will cause the plastic to fail. 
 So-called **digital servos** use faster internal electronics than the older, so-called analog servos, and because they sample the incoming pulse stream at a higher frequency, they are more responsive to small, rapid commands from the controller. For this reason they are preferred by hobbyists using servos to control the flight of model airplanes.
 A servo generally has three wires, colored red (power supply), black or brown (ground), and orange, yellow, or white (for the pulse train from the controller). The ground wire to the motor must be common with the ground of the controller, and consequently a ceramic bypass capacitor of 0.1μF or 0.01μF should be placed between the (red) power wire to the motor and ground. A protection diode should also be used.
 Various shaft attachments are available from the same online hobby-electronics suppliers that sell servos. The attachments include discs, single arms, double arms, and four arms in a crossshaped configuration. A single-arm attachment is often known as a horn, and this term may be applied loosely to any kind of attachment.
-![](images/27October2019_19h47m.png)
+<img src="images/27October2019_19h47m.png" style="zoom:33%;" />
 
 ## Modification for Continuous Rotation
  It is possible to modify a small servo motor so that it will rotate continuously. First the motor case must be opened, and the potentiometer must be centered by using a controller to send some 1.5ms pulses. The potentiometer must then be glued or otherwise secured with its wiper in this precise center position, after which the potentiometer is disconnected from the drive train.
@@ -854,8 +860,8 @@ Mechanical stops that would limit the rotation of the motor shaft must be cut aw
 ##Permanent Magnet Stepper Motors 
 More commonly, the rotor of a stepper motor contains permanent magnets, which require the controller to be capable of reversing the magnetic field created by each of the stator coils, so that they alternately attract and repel the rotor magnets.
 In a bipolar motor, the magnetic field generated by a coil is reversed simply by reversing the current through it. This is shown diagrammatically in Figure 25-3. In a unipolar motor, the magnetic field is reversed by applying positive voltage to the center tap of a coil, and grounding one end or the other. This is shown diagrammatically in Figure 25-4.
-![](images/27October2019_20h01m.png)
-![](images/27October2019_20h02m.png)
+<img src="images/27October2019_20h01m.png" style="zoom:33%;" />
+<img src="images/27October2019_20h02m.png" style="zoom:33%;" />
 
 ## Bipolar Stepper Motors 
 The most basic way to reverse the current in a coil is by using an H-bridge configuration of switches, as shown in Figure 25-8, where the green arrow indicates the direction of the magnetic field. In actual applications, the switches are solid-state. Integrated circuits are available containing all the necessary components to control a bipolar stepper motor.
@@ -865,15 +871,14 @@ However, this type of motor is less powerful for its size and weight because onl
 
 ![](images/28October2019_22h29m.png)
 
-
 ##Multiphase
  In a multiphase motor, multiple stator coils are usually connected in series, with a center tap applied between each pair.
-![](images/28October2019_22h50m.png)
+<img src="images/28October2019_22h50m.png" style="zoom:50%;" />
 The way in which the motor is wired enables only one stator coil to be unpowered during any step, because its two ends are at equal potential. Therefore this type of motor is capable of high torque in a relatively small format.
 ##Voltage Control 
 Rapid stepping of a motor requires rapid creation and collapse of magnetic fields in the stator windings. Therefore, self-inductance of the windings can limit the motor speed. One way to overcome this is to use a higher voltage. A more sophisticated solution is to use a controller that provides a high initial voltage, which is reduced or briefly interrupted when a sensor indicates that coil current has increased sufficiently to overcome the self-inductance of the windings and has reached its imposed limit. This type of controller may be referred to as a chopper drive as the voltage is “chopped,” usually by power transistors. It is a form of pulse width modulation.
 
-![](images/28October2019_22h57m.png)
+<img src="images/28October2019_22h57m.png" style="zoom:50%;" />
 
 If a unipolar motor is relatively small and is fitted with five wires, almost certainly the motor contains two coils, each with a center tap, and their function can be determined by applying positive voltage to the red wire and grounding each of the other wires in turn. Attaching a small piece of tape to the motor shaft will assist in viewing its orientation.
 A multimeter set to measure ohms can also be useful in deducing the internal coil connections of the motor, since the end-to-end resistance of a coil should be approximately twice the resistance between the center tap and either end of the coil.
@@ -897,7 +902,7 @@ One way to remember the meaning of a stripe on the cathode end of a rectifier di
  Also known as switching diodes and high-speed diodes, their small size provides a low junction capacitance, enabling fast response times. They are not designed to withstand high currents. Signal diodes traditionally were packaged with axial leads for through-hole installation (like traditional-style resistors). Although this format still exists, signal diodes are now more commonly available in surface-mount formats.
 ## Zener Diode
 The Zener is intended to be reverse-biased; that is, conventional current is applied through it “in the wrong direction” compared with conventional diodes. As the current increases, the dynamic resistance of the Zener diode decreases.
-![](images/29October2019_21h22m.png)
+<img src="images/29October2019_21h22m.png" style="zoom:33%;" />
 
 ## Transient Voltage Suppressor (TVS)
  A form of Zener diode designed to protect sensitive devices from transient voltage spikes by clamping them—in other words, diverting the energy to ground. A TVS can absorb as much as 30,000 volts from a lightning strike or static discharge. Typically the Zener diode is incorporated in a network of other diodes in a surface-mount integrated circuit chip. Zener diodes can also be used in circuits to handle electrostatic discharge (ESD), which can occur when a person unknowingly accumulates an electrostatic potential and then grounds it by touching an electronic device.
@@ -914,37 +919,36 @@ A varactor is always reverse-biased below its breakdown voltage, so that there i
 ##Voltage Selection 
 A diode is sensitive to the relative voltage between its anode and cathode terminals. In other words, if the cathode is at 9V relative to the ground in the circuit, and the anode is at 12V, the 3V difference will easily exceed the threshold voltage, and the diode will pass current. (Actual tolerable values will depend on the forward voltage capability of the diode.) If the voltages are reversed, the diode will block the current.
 This attribute can be used to make a device choose automatically between an AC adapter and a 9V battery. The schematic is shown in Figure 26-16. When an AC adapter that delivers 12VDC is plugged into a wall outlet, the adapter competes with the battery to provide power to a voltage regulator. The battery delivers 9VDC through the lower diode to the cathode side of the upper diode, but the AC adapter trumps it with 12VDC through the upper diode. Consequently, the battery ceases to power the circuit until the AC adapter is unplugged, at which point the battery takes over, and the upper diode now prevents the battery from trying to pass any current back through the AC adapter.
-![](images/29October2019_21h33m.png)
+<img src="images/29October2019_21h33m.png" style="zoom:33%;" />
 
 ##Voltage Clamping 
 A diode can be used to clamp a voltage to a desired value. If an input to a 5V CMOS semiconductor or similarly sensitive device must be prevented from rising out of range, the anode of a diode can be connected to the input and the cathode to a 5V voltage source. If the input rises much above 5.6V, the potential difference exceeds the diode’s junction threshold, and the diode diverts the excess energy.
 
-![](images/29October2019_21h40m.png)
+<img src="images/29October2019_21h40m.png" style="zoom:33%;" />
 
 if two or more outputs from a logic chip or microcontroller are intended to drive, or share, another device such as a single LED, as shown in Figure 26-18. In this role, the diodes wired in parallel behave similarly to an OR gate, while preventing either output from the chip from feeding current back into the other output.
 
-
-![](images/29October2019_21h42m.png)
+<img src="images/29October2019_21h42m.png" style="zoom:33%;" />
 
 ##DC Voltage Regulation and Noise Suppression
  As previously noted, the dynamic resistance of a reverse-biased Zener diode will diminish as the current increases. This relationship begins at the point where breakdown in the diode begins—at its Zener voltage--and is approximately linear over a limited range. The unique behavior of the Zener makes it usable as a very simple voltage controller when placed in series with a resistor as shown in Figure 26-19. It is helpful to imagine the diode and the resistor as forming a kind of voltage divider, with power being taken out at point A in the schematic. If a supply fluctuation increases the input voltage, this will tend to increase the current flowing through the Zener, and its dynamic resistance will diminish accordingly. A lower resistance in its position in the voltage divider will reduce the output voltage at point A, thus tending to compensate for the surge in input voltage.
 
 Conversely, if the load in the circuit increases, and tends to pull down the input voltage, the current flowing through the Zener will diminish, and the voltage at point A will tend to increase, once again compensating for the fluctuation in the circuit.
 As the series resistor would be a source of heat, a transistor could be added to drive the load, as shown in Figure 26-20.
-![](images/29October2019_21h49m.png)
+<img src="images/29October2019_21h49m.png" style="zoom:33%;" />
 
 ##AC Voltage Control and Signal Clipping 
 A more practical Zener application would be to limit AC voltage and/or impose clipping on an AC sinewave, using two diodes wired in series with opposed polarities. The basic schematic is shown in Figure 26-21, while clipping of the AC sinewave is illustrated in Figure 26-22. In this application, when one diode is reverse-biased, the other is forward-biased. A forward-biased Zener diode works like any other diode: it allows current to pass relatively freely, so long as the voltage exceeds its threshold. When the AC current reverses, the Zeners trade their functions, so that the first one merely passes current while the second one limits the voltage. Thus, the diodes divert peak voltage away from the load. The Zener voltage of each diode would be chosen to be a small margin above the AC voltage for voltage control, and below the AC voltage for signal clipping.
 
-![](images/29October2019_21h51m.png)
+<img src="images/29October2019_21h51m.png" style="zoom:33%;" />
 
 ## Voltage Sensing
 A Zener diode can be used to sense a small shift in voltage and provide a switched output in response.
 In Figure 26-23, the upper schematic shows a Zener diode preventing voltage from reaching the emitter of a PNP transistor while the divided input signal is below the Zener (breakdown) voltage of the diode. In this mode, the transistor is relatively non-conductive, very little current flows through it, and the output is now at nearzero voltage. As soon as the input signal rises above the Zener voltage, the transistor switches on and power is supplied to the output. The input is thus replicated in the output, as shown in the upper portion of Figure 26-24. In Figure 26-23, the lower schematic shows a Zener diode preventing voltage from reaching the base of an NPN transistor while the input signal is below the Zener (breakdown) voltage of the diode. In this mode, the transistor is relatively non-conductive, and power is supplied to the output. As soon as the input signal rises above
 
-![](images/29October2019_22h01m.png)
+<img src="images/29October2019_22h01m.png" style="zoom:33%;" />
 
-![](images/29October2019_22h02m.png)
+<img src="images/29October2019_22h02m.png" style="zoom:33%;" />
 
 ##Wrong Type of Diode
  If a Zener diode is used accidentally where a signal or rectifier diode is appropriate, the circuit will malfunction, as the Zener will probably have a much lower breakdown voltage, and therefore will not block reverse current. Conversely, if a signal or rectifier diode is used where the circuit calls for a Zener diode, reverse voltage will be clamped (or regulated at the diode’s forward voltage value). Since diodes are often poorly marked, a sensible precaution is to store Zener diodes separately from all other types.
@@ -956,13 +960,13 @@ The UJT declined in popularity during the 1980s after introduction of components
 Whereas an integrated circuit such as a 555 timer generates a square wave, unijunction transistors in oscillator circuits generate a series of voltage spikes.
 The PUT is often used to trigger a thyristor (described in Volume 2) and has applications in lowpower circuits, where it can draw as little as a few microamps.
 Schematic symbols for the two components are shown in Figure 27-1 and Figure 27-2. Although the symbol for the UJT is very similar to the symbol for a field-effect transistor (FET), its behavior is quite different. The bent arrow identifies the UJT, while a straight arrow identifies the FET. This difference is of significant importance.
-![](images/29October2019_22h06m.png)
+<img src="images/29October2019_22h06m.png" style="zoom:33%;" />
 
 The UJT is a three-terminal semiconductor device, but contains only two sections sharing a single junction—hence its name. Leads attached to opposite ends of a single channel of N-type semiconductor are referred to as base 1 and base 2, with base 2 requiring a slightly higher potential than base 1. A smaller P-type insert, midway between base 1 and base 2, is known as the emitter.
 When no voltage is applied to the emitter, a relatively high resistance (usually more than 5K) prevents significant current flow from base 2 to base 1. When the positive potential at the emitter increases to a triggering voltage (similar to the junction threshold voltage of a forward-biased diode), the internal resistance of the UJT drops very rapidly, allowing current to enter the component via both the emitter and base 2, exiting at base 1. (The term “current” refers, here, to conventional current; electron flow is opposite.) Current flowing from base 2 to base 1 is significantly greater than current flowing from the emitter to base 1.
-![](file:///C:/Users/f126ck/Desktop/markEd/images/29October2019_22h40m.png)
+<img src="file:///C:/Users/f126ck/Desktop/markEd/images/29October2019_22h40m.png" style="zoom:50%;" />
 
-![](file:///C:/Users/f126ck/Desktop/markEd/images/01November2019_11h30m.png)
+<img src="file:///C:/Users/f126ck/Desktop/markEd/images/01November2019_11h30m.png" style="zoom:33%;" />
 
 A PUT behaves similarly in many ways to a UJT but is internally quite different, consisting of four semiconducting layers and functioning similarly to a thyristor
 
@@ -971,7 +975,7 @@ This component is triggered when the voltage at its anode exceeds a threshold le
 
 This behavior is almost identical to that of a forward-biased diode, except that the threshold level can be controlled, or “programmed,” according to the value of the positive potential applied at the gate, with R1 and R2 establishing that potential by functioning as a voltage divider.
 
-![](file:///C:/Users/f126ck/Desktop/markEd/images/01November2019_11h33m.png)
+<img src="file:///C:/Users/f126ck/Desktop/markEd/images/01November2019_11h33m.png" style="zoom:50%;" />
 
 The triggering voltage of a UJT can be calculated from the values of R1 and R2 in Figure 27-7 and the voltage at base 1. The term Rbb is often used to represent the sum of R1 + R2, with Vbb representing the total voltage across the two resistors (this is the same as the supply voltage in Figure 27-6). Vt, the triggering voltage, is given by:
 Vt = Vbb * (  R1 / Rbb )
@@ -1008,7 +1012,7 @@ The common-collector configuration has current gain but no voltage gain.
 
 #FET
 JFETs A junction field-effect transistor (or JFET) is the simplest form of FET. Just as a bipolar transistor can be of NPN or PNP type, a JFET can have an Nchannel or P-channel, depending whether the channel that transmits current through the device is negatively or positively doped.
-![](file:///C:/Users/f126ck/Desktop/markEd/images/01November2019_12h08m.png) 
+<img src="file:///C:/Users/f126ck/Desktop/markEd/images/01November2019_12h08m.png" style="zoom:33%;" /> 
 
 The JFET is like a normally-closed switch. It has a low resistance so long as the gate is at the same potential as the source. However, if the potential of the gate is reduced below the potential of the source—that is, the gate acquires a more relatively negative voltage than the source—the current flow is pinched off as a result of the field created by the gate. This is suggested by the lower diagram in Figure 29-4.
 
@@ -1068,15 +1072,16 @@ A clamper is an electronic circuit that fixes either the positive or the negativ
 
 ### Low Voltage ride through
 Many generator designs use electric current flowing through windings to produce the magnetic field on which the motor or generator operates. This is in contrast to designs that use permanent magnets to generate this field instead. Such devices may have a minimum working voltage, below which the device does not work correctly, or does so at greatly reduced efficiency. Some will disconnect themselves from the circuit when these conditions apply. The effect is more pronounced in doubly-fed induction generators (DFIG)[3], which have two sets of powered magnetic windings, than in squirrel-cage induction generators which have only one. Synchronous generators may slip and become unstable, if the voltage of the stator winding goes below a certain threshold.
-![](file:///C:/Users/f126ck/Desktop/markEd/images/02November2019_11h07m.png)
+<img src="file:///C:/Users/f126ck/Desktop/markEd/images/02November2019_11h07m.png" style="zoom:33%;" />
 Consequently, the upper (PNP) transistor cannot sink current, and this transistor also remains nonconductive.
 When voltage is applied to the “gate,” the lower transistor starts to sink current from the upper transistor. This switches it on. The two transistors
 now continue to conduct even if power to the “gate” is disconnected, because they have created a positive feedback loop.
-![](file:///C:/Users/f126ck/Desktop/markEd/images/02November2019_11h09m.png)
+<img src="file:///C:/Users/f126ck/Desktop/markEd/images/02November2019_11h09m.png" style="zoom:33%;" />
+
 ## SCR Concept Demo 
 In Figure 1-9, pushbutton S1 applies voltage to the gate of the SCR, which puts the SCR in selfsustaining conductive mode. When S1 is released, the meter will show that current continues to pass between the anode and the cathode. The X0403DF SCR suggested for this circuit has a holding current of 5mA, which a 5VDC supply should be able to provide with the 1K resistor in the circuit. If necessary, this resistor can be reduced to 680Ω.
 Now if pushbutton S2 is pressed, the flow is interrupted. When S2 is released, the flow will not resume. Alternatively, if pushbutton S3 is pressed while the SCR is conducting current, the flow is diverted around the SCR, and when the pushbutton is released, the flow through the SCR will not resume. Thus, the SCR can be shut down either by a normally closed pushbutton in series with it (which will interrupt the current), or a normally open pushbutton in parallel with it (which will divert the current).
-![](file:///C:/Users/f126ck/Desktop/markEd/images/02November2019_11h14m.png)
+<img src="file:///C:/Users/f126ck/Desktop/markEd/images/02November2019_11h14m.png" style="zoom:50%;" />
 
 Any SCR will impose a forward voltage drop, which typically ranges from around 1V to 2V, depending on the component.
 Leakage in the “off” state may be as high as 0.5mA or as low as 5µA. Gate trigger voltage is likely to range from 0.8V to 1.5V, and trigger current of 0.2mA to 15mA is typical.
@@ -1091,7 +1096,7 @@ This is a form of pulse-width modulation.
 Six SCRs may be used to control three-phase power.
 
 **A very rapid increase in forward voltage at the anode can induce a triggering voltage in the gate by capacitive coupling. As a result, the SCR can trigger itself without any external application of gate voltage. This is sometimes known as dv/dt triggering. If necessary, a snubber circuit can be added across the anode input to prevent sudden voltage transitions. **
-![](file:///C:/Users/f126ck/Desktop/markEd/images/02November2019_14h47m.png)
+<img src="file:///C:/Users/f126ck/Desktop/markEd/images/02November2019_14h47m.png" style="zoom:50%;" />
 
 
 # Diac
@@ -1107,7 +1112,7 @@ A **sidac** behaves very similarly to a diac, its name being derived from “sil
 When performing its function to trigger a triac, a diac is unlikely to pass more than 100mA.
 
 On a datasheet, a value for breakover current is valid only within a recommended temperature range. A buildup of heat can provoke unexpected triggering.
-![](file:///C:/Users/f126ck/Desktop/markEd/images/02November2019_15h01m.png)
+<img src="file:///C:/Users/f126ck/Desktop/markEd/images/02November2019_15h01m.png" style="zoom:50%;" />
 
 ## Symbol of diac
 ![](file:///C:/Users/f126ck/Desktop/markEd/images/02November2019_15h02m.png)
@@ -1116,19 +1121,155 @@ On a datasheet, a value for breakover current is valid only within a recommended
 The triac is ubiquitous in AC dimmers for incandescent lamps. It is also used to control the speed of AC motors and the output of resistive heating elements. It is a type of thyristor which contains five segments of p-type and n-type silicon and has three leads, one of them attached to a gate that can switch a bidirectional flow of current between the other two. Its name was originally a trademark, generally thought to be derived from the phrase “triode for AC.”
 **An SCR (silicon-controlled rectifier) is a thyristor that resembles a triac, as it has three leads, one of them a gate. However, it only allows current to flow in one direction.**
 
-![](file:///C:/Users/f126ck/Desktop/markEd/images/02November2019_17h01m.png)
+<img src="file:///C:/Users/f126ck/Desktop/markEd/images/02November2019_17h01m.png" style="zoom:50%;" />
 
+The A1 terminal (or T1, or MT1) is always shown closer to the gate than A2 (or T2, or MT2). This distinction is important because although the triac can pass current in either direction, its behavior is somewhat asymmetrical.
+When no gate voltage is applied, the triac remains in a passive state and will block current in either direction between A1 and A2, although a very small amount of leakage typically occurs. If the gate potential becomes sufficiently positive or negative relative to terminal A1, current can begin to flow between A1 and A2 in either direction. This makes the triac ideal for controlling AC.
 
+Quadrants While a gate voltage is applied, four operating modes are possible. In each case, A1 is the reference (which can be thought of as being held at a neutral ground value). Because the triac is conducting AC, voltages above and below ground will occur. The four modes of operation are often referred to as four quadrants, and are typically arranged as shown in Figure 3-6.
+n this encyclopedia, current is always shown flowing from a more-positive location to a more-negative location. Quadrant 1 (upper right) A2 is more positive than A1, and the gate is more positive than A1. Conventional current (positive to negative) will flow from A2 to A1. (This behavior is very similar to that of an SCR.)
+Quadrant 2 (upper left) A2 is more positive than A1, and the gate is more negative than A1. Once again, conventional current (positive to negative) will flow from A2 to A1.
 
+Quadrant 3 (lower left) A2 is more negative than A1, and the gate is more negative than A1. Conventional current is reversed from A1 to A2.
+Quadrant 4 (lower right) A2 is more negative than A1, but the gate is more positive than A1. Conventional current is reversed from A1 to A2.
 
+<img src="file:///C:/Users/f126ck/Desktop/markEd/images/02November2019_17h06m.png" style="zoom:50%;" />
 
+<img src="file:///C:/Users/f126ck/Desktop/markEd/images/02November2019_17h09m.png" style="zoom:50%;" />
 
+##Breakover Voltage 
+If a much higher voltage is applied to A2, the triac can be forced to conduct current without any triggering voltage being applied to the gate. This occurs when the potential between A1 and A2 reaches the triac’s breakover voltage, although the component is not designed to be used this way. The concept is illustrated in Figure 3-10, which can be compared with the behavior of an SCR illustrated in Figure 1-8 and the behavior of a diac shown in Figure 2-5. While the term breakdown voltage defines the minimum reverse voltage required to force a diode to conduct, breakover voltage refers to the minimum forward voltage that has this effect. Because a triac is designed to conduct in both directions, it can be thought of as having a breakover voltage in both directions.
 
+<img src="file:///C:/Users/f126ck/Desktop/markEd/images/02November2019_17h14m.png" style="zoom:50%;" />
 
+## Triac Triggered by a Diac 
+The problem of asymmetrical triggering can be overcome if the triac is triggered with a voltage pulse generated by another component that does behave symmetrically. The other component is almost always a diac, which is another type of thyristor. Unlike an SCR or a triac, it has no gate. It is designed to be pushed beyond its breakover voltage, at which point it latches and will continue to conduct until current flowing through it diminishes below its holding level. 
 
+This emits a switching signal to a triac only when the AC voltage passes through zero. A zero cross circuit is desirable because it creates much less interference. The use of an optocoupler helps to isolate the triac from other components.(((“zero cross circuit”))
 
+##Charge Storage 
+While switching AC, the internal charge between A1 and A2 inside the triac requires time to dissipate before the reverse voltage is applied; otherwise, charge storage occurs, and the component may start to conduct continuously. For this reason, the triac is normally restricted to relatively low frequencies such as domestic 60Hz AC power.
+In a datasheet, the term commutating dv/dt defines the rate of rise of opposite polarity voltage that the triac can withstand without locking into a continuous-on state.
+An RC snubber network is often wired in parallel with A1 and A2 to control the rise time of voltage to the triac
 
+An RC snubber network is often wired in parallel with A1 and A2 to control the rise time of voltage to the triac
 
+<img src="file:///C:/Users/f126ck/Desktop/markEd/images/02November2019_17h25m.png" style="zoom:50%;" />
 
+Low-Temperature Effects Significantly higher gate current will be required by a triac operating at low temperatures
 
+a triac will tend to suffer from charge storage if there is insufficient time between the end of one half-cycle and the beginning of the next. A component that works with a resistive load may cease to function if it is used, instead, to power an inductive load.
+
+# Solid State Relay
+
+SSR
+Very fast response, typically 1µs on and 0.5µs off.
+Very low power consumption on the input side, as low as 5mA at 5VDC. Many solid-state relays can be driven directly from logic chips
+No contact bounce; a clean output signal
+No coil that would introduce back EMF into the circuit
+Passes some leakage current (usually measured in microamps) on the output side when the relay is supposed to be “off.”
+The MOSFETs require so little power, it can be provided entirely by light falling on an array of 20 or more photodiodes inside the SSR package.
+A zero crossing SSR is one that (a) switches AC current and (b) will not switch “on” until the instant when the AC voltage crosses through 0V. The advantages of this type are that it does not have to be built to switch such a high current, and creates minimal voltage spike when the switching occurs.
+
+Solid-state relays are SPST devices, but different models may have a normally closed or normally open output. If you require double-throw operation, two relays can be combined, one normally closed, the other normally open. See Figure 4-4.
+<img src="file:///C:/Users/f126ck/Desktop/markEd/images/02November2019_17h36m.png" style="zoom:50%;" />
+
+Overheating Caused by Changing Duty Cycle
+
+## Low Voltage Output Current May Not Work  
+To test a solid-state relay, apply actual voltages on input and output sides and use a load such as an incandescent light bulb. Merely applying a meter on the output side, set to measure continuity, may not provide sufficient voltage to enable the relay to function, creating the erroneous impression that it has failed.
+##I nability to Measure AC Output
+ When a multimeter is used to test continuity across the output of an AC-switching solid-state relay of zero-crossing specification, the meter will generate enough voltage to prevent the solid-state relay from finding zero voltage across its output terminals, and consequently the solidstate relay won’t switch its output.
+## Relay Turns On but Won’t Turn Off
+ When a solid-state relay controls a relatively high-impedance load such as a small solenoid (see Volume 1) or a neon bulb (see Chapter 19), the relay may switch the device on but will seem unable to switch it off. This is because the leakage current of the solid-state relay, in its “off” state,
+may be just enough to maintain the load in its “on” state.
+
+## Relays in Parallel Won’t Work 
+Two solid-state relays usually cannot be used in parallel to switch twice as much current. Because of small manufacturing variances, one relay will switch on a moment before the other. When the first relay is on, it will divert the load current away from the second relay. The second relay needs a small amount of current on its output side, to function. Without any current, it will not switch on. This means the first relay will pass the total current without any help from the second relay, and will probably burn out, while the second relay does nothing.
+
+## Output Device Doesn’t Run at Full Power
+ A solid-state relay imposes a voltage reduction on its output side. This will be a fixed amount, not a percentage. When switching 110V, this difference may be negligible; when switching 12V, it may deliver only 10.5V, which represents enough of a drop to cause a motor or a pump to run noticeably more slowly. 
+
+## Solid-State Relays and Safety
+ Disconnects Because a solid-state relay always allows some leakage in its “off” state, it can still deliver a shock when used to switch high voltages. For this reason, it may not be suitable in a safety disconnect.
+
+# Optocoupler
+
+The output from a logic chip passes through an optocoupler to an inductive load such as a relay coil, which may create voltage spikes that would be hazardous to the chip.
+
+The noisy signal from an electromagnetic switch passes through an optocoupler to the input of a logic chip.
+
+The low-voltage output from a sensing device on a human patient passes through an optocoupler to some medical equipment, such as an EEG machine, where higher voltages are used.
+
+The low-voltage output from a sensing device on a human patient passes through an optocoupler to some medical equipment, such as an EEG machine, where higher voltages are used.
+
+Optocouplers also eliminate ground loops, which tend to be induced by small differences in ground potential, introducing hum or buzz in audio applications when two or more power supplies are tied together.
+The type of optocoupler that contains a photoresistor and is commonly used by musicians was initially trademarked as a Vactrol, and that term is still used generically. Vactrols have also been used to provide audio compression in telephone voice networks, and were used in photocopiers and photographic exposure meters, but these applications are now obsolete.
+A PIN diode can respond in less than a nanosecond; its acronym is derived from its fabrication from p-type and n-type semiconductor layers with an intrinsic layer connecting them. . This additional layer can be responsive to light. When the diode is slightly reverse-biased, a photon entering the intrinsic layer can dislodge an electron, enabling current to flow. The reverse bias enlarges the active area and enhances the effect. In this mode, the PIN acts like a photoresistor, appearing to reduce its resistance in response to light.
+
+The LED in an optocoupler typically requires 5mA at a forward voltage of 1.5V to 1.6V.
+
+The primary purpose of an optocoupler is to provide protection against excessive voltage—from transients, incompatible power supplies, or equipment with unknown characteristics. 
+**If a device is designed to be plugged into a USB port on a computer, for instance, the computer may be isolated via an optocoupler.**
+While significant overload will cause immediate burnout, slightly exceeding the current rating of the LED may have more pernicious consequences, as the LED may not fail until days or weeks have passed without any sign of trouble. The failure of the optocoupler will be unexpected and difficult to determine.
+
+# Comparator
+A comparator is an integrated circuit chip that compares a variable voltage on one input pin with a fixed, reference voltage on a second input pin. Depending which voltage is higher, the output from the comparator will be high or low.
+
+f positive feedback is added through external resistors, hysteresis can be introduced. We may imagine a hysteresis zone extending above and below the reference voltage level.
+
+This is a small voltage, in addition to the reference voltage, which the comparator will require to toggle its output in either direction, up or down.
+Vio sets the limit of resolution of the comparator, which will not respond unless the input voltage exceeds the reference voltage by this amount
+Common values for VIO range from 1mV to 15mV.
+Because the comparator will not respond until the reference voltage is exceeded by VIO, the output pulse width will be narrower than if the comparator reacted at the point where the variable voltage input was precisely the same as the reference voltage.
+
+<img src="file:///C:/Users/f126ck/Desktop/markEd/images/03November2019_11h52m.png" style="zoom:50%;" />
+
+Isink is the recommended typical or maximum sink current that the component will tolerate, if it has an open-collector output.
+The propagation delay in a comparator is measured from the moment when an input (usually a square wave) reaches the triggering value, to the time when the consequent output reaches 50% of its final value.
+
+a typical value for a pullup resistor is 100K. 
+respond with jitter when the input signal is very close to the reference voltage, because of tiny variations in heat, current, and other variables. This jitter will cause significant problems if the comparator is driving a device such as a relay, directly or indirectly.
+Also, if a comparator is being used as a thermostat, to switch a heating system on and off, we do not want the comparator to respond as soon as the temperature rises just a small amount. The heating system should run for a while before it elevates the temperature beyond the hysteresis zone.
+
+<img src="file:///C:/Users/f126ck/Desktop/markEd/images/03November2019_12h01m.png" style="zoom:50%;" />
+
+#Various connections
+
+<img src="file:///C:/Users/f126ck/Desktop/markEd/images/03November2019_12h03m.png" style="zoom:33%;" />
+
+Differences from an Op-Amp Saturation versus linearity The output of a comparator is optimized for saturation (high or low, without intermediate levels, using positive feedback). The output of an op-amp is optimized for linearity (faithful reproduction of nuances in the input, using negative feedback).
+
+Output mode The majority of comparators have opencollector outputs (or open-drain outputs in CMOS devices) where the voltage is established by a pullup resistor. This can be adjusted for compatibility with other components, especially 5VDC logic. Only a minority have push-pull amplifier outputs that require no pullup resistor. By comparison, among op-amps, a push-pull output that functions as a voltage source is the traditional default.
+
+Some comparators have a push-pull output, capable of supplying output current (usually a small amount). In these instances, no pullup resistor is necessary or desirable. The output voltage range will be closest to rail-to-rail values
+
+he advantage of an open collector (or open drain) relative to a push-pull output is that it allows the output voltage to be set independently of the power supply voltage. Another advantage is that multiple outputs can be connected in parallel, as in a window comparator circuit
+
+## AND gate
+ A set of open-collector comparators can function jointly as an AND gate, when their outputs are tied together with one pullup resistor. So long as all the output transistors are nonconductive, the output will be high. If just one comparator toggles into conductive mode, the output will be low. 
+
+<img src="file:///C:/Users/f126ck/Desktop/markEd/images/03November2019_12h07m.png" style="zoom:33%;" />
+
+Bistable Multivibrator If positive feedback to the noninverting input of the comparator is sufficiently high, a voltage almost at 0V ground will be required to counter the high output from the comparator—after which, a voltage almost equal to the supply voltage will be needed to turn it back on. In other words, the comparator is behaving like a bistable multivibrator, or flip-flop.
+
+#Relaxation Oscillator
+A relaxation oscillator, which is a form of astable multivibrator, can be created using direct positive feedback in combination with delayed negative feedback.
+. In Figure 6-12, positive feedback goes to the noninverting input, as before, but negative feedback also passes through a 220K resistor to the inverting input of the comparator. A 0.47µF capacitor initially holds the inverting input low, while the capacitor charges. Gradually the capacitor reaches and exceeds the charge on the noninverting input, so the output from the comparator toggles to its low state. This means that its internal transistor is now sinking current, and it discharges the capacitor. Because the noninverting input is being held at a voltage midway between supply and ground by the two 100K resistors forming a voltage divider, eventually the voltage on the inverting input controlled by the capacitor falls below the noninverting voltage, so the cycle begins again
+<img src="file:///C:/Users/f126ck/Desktop/markEd/images/20191103_03November2019_12h41m.png" style="zoom:50%;" />
+
+##Level Shifter 
+Where a comparator is used simply to change the level of an input voltage, it can be referred to as a level shifter. An example of a level shifter is shown in Figure 6-13, in which a high/low 3VDC logic input is converted to a high/low logic output at 5VDC.
+
+<img src="file:///C:/Users/f126ck/Desktop/markEd/images/20191103_03November2019_12h45m.png" style="zoom:50%;" />
+##Window Comparator
+ A window comparator is a circuit (not a single component) that will respond to input voltages that deviate outside an acceptable “window” of values. In other words, the circuit responds anytime the variable input is either unacceptably low or unacceptably high.
+
+<img src="file:///C:/Users/f126ck/Desktop/markEd/images/20191103_03November2019_12h46m.png" style="zoom:50%;" />
+
+## Other applications
+A comparator can be used as a zero point finder when its variable voltage input is attached to an AC signal.
+
+**A continuous converter changes its output promptly in response to a change in input. This requires continuous current consumption. Because many applications only need to check the output from a comparator at intervals, power can be saved by using a clocked or latched comparator.**
+Oscillating Output The high input impedance of a comparator is vulnerable to stray electromagnetic fields. If the conductors leading to and from the comparator are relatively long, the output can couple capacitively with the input during voltage transitions, causing unwanted oscillations.
 
