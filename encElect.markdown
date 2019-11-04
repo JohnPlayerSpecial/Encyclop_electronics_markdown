@@ -1271,5 +1271,140 @@ Where a comparator is used simply to change the level of an input voltage, it ca
 A comparator can be used as a zero point finder when its variable voltage input is attached to an AC signal.
 
 **A continuous converter changes its output promptly in response to a change in input. This requires continuous current consumption. Because many applications only need to check the output from a comparator at intervals, power can be saved by using a clocked or latched comparator.**
-Oscillating Output The high input impedance of a comparator is vulnerable to stray electromagnetic fields. If the conductors leading to and from the comparator are relatively long, the output can couple capacitively with the input during voltage transitions, causing unwanted oscillations.
 
+## Oscillating Output
+
+ The high input impedance of a comparator is vulnerable to stray electromagnetic fields. If the conductors leading to and from the comparator are relatively long, the output can couple capacitively with the input during voltage transitions, causing unwanted oscillations. SOLUTION add 1µF bypass capacitors to the power supply on either side of the comparator.
+
+If a chip contains multiple comparators, and one of them is unused, one of its input pins should be tied to the positive side of the voltage supply while the other should be tied to 0V ground, to eliminate the possibility of an oscillating output.
+
+# Op-Amp
+
+An op-amp is an operational amplifier consisting of multiple transistors packaged in an integrated circuit chip. It senses the fluctuating voltage difference between two inputs, uses power from an external supply to amplify that difference, and uses negative feedback to ensure that the output is an accurate replica of the input. Its amplification can be adjusted by changing the values of two external resistors.
+
+Many chips are available containing two or more op-amps. This is often expressed as the number of channels in the component.
+
+The op-amps derived from 1970s designs often tolerate a wide range of power-supply voltages. Plus-or-minus 5VDC to plus-or-minus 15VDC is a common range. Modern op-amps are available that run from as little as 1VDC to as much as 1,000VDC.
+
+Op-amps are available for frequencies ranging from 5KHz all the way up to 1GHz.
+
+
+
+LM741: The most current it will draw from an input is around 0.5µA
+
+VIO is the input offset voltage. In an ideal component, the output from an op-amp should be 0V when its inputs have a voltage difference of 0V. In practice, the output will be 0V when the inputs differ by the offset voltage. VIO is likely to be no greater than a couple of mV, and negative feedback can compensate for the offset.
+
+Slew rate at unity gain is the rate of change of the output voltage caused by an instantaneous change on the input side, when the output of the op-amp is connected directly back to the inverting input (during operation in noninverting mode).
+
+Can an op-amp that is designed for dual voltages be made to run from a single supply, such as 30VDC?
+
+This is relatively easy to do. The op-amp simply needs a potential difference to power its internal transistors, and 30VDC on the V+ pin with 0VDC on the V− pin will work just as well as +15VDC and -15VDC. However, referring back to Figure 7-6, if the op-amp is used in inverting mode, an intermediate voltage must be supplied to the noninverting input. Likewise, in noninverting mode, an intermediate voltage is necessary for one of the inputs, and must be half-way
+
+![](images/20191103_03November2019_16h57m.png)
+
+## Offset Null Adjustment
+
+ Some op-amps provide two pins for offset null adjustment, which is a setup process to ensure that identical voltage on the two inputs will produce a null output.
+
+## Bad connection of unused sections/ channels
+
+![](images/20191103_03November2019_17h01m.png)
+
+# Digital Potentiometer
+
+This component is an integrated circuit chip that emulates the function of an analog potentiometer.
+
+Possible applications include adjustment of the pulse width of an oscillator or multistable multivibrator (e.g., using the Control pin of a 555 timer chip); adjustment of the gain in an op-amp; specification of voltage delivered by a voltage regulator; and adjustment of a bandpass filter.
+
+• Reliability. The digital component may be rated for as many as a million cycles (each storing the wiper position in an internal memory location). An analog component may be capable of just a few thousand adjustment cycles.
+• Digital interface. • Elimination of long signal paths or cable runs. The digital potentiometer can be placed close to other chips, whereas an analog potentiometer often has to be some distance away to enable control by the end user. Reduction in the length of signal paths can reduce capacitive effects, while elimination of cable runs will reduce manufacturing costs.
+• Reduction in size and weight compared with a manual potentiometer.
+
+
+
+A digital potentiometer changes the point at which a connection is made along a ladder of many fixed resistors connected in series inside the chip. Each end of the ladder, and each intersection between two adjacent resistors, is known as a tap. The pin that can connect with any of the taps is referred to as the wiper, because it emulates the function of a wiper in an analog potentiometer.
+
+No specific schematic symbol represents a digital potentiometer. Often the component is shown as an analog potentiometer symbol inside a box that has a part number,
+
+Any type of digital potentiometer requires memory to store its current wiper position, and this memory may be volatile or nonvolatile. Nonvolatile memory may be indicated in a datasheet by the term NV.
+
+Taper Digital potentiometers are available with linear taper or logarithmic taper.
+
+SPI. This acronym is derived from serial peripheral interface, a term trademarked by Motorola but now used generically. The standard is adapted in various radically different ways among digital potentiometers
+
+• I2C. More correctly printed as I2C and properly pronounced “I squared C,” this acronym is derived from the term inter-integrated circuit. Developed by Philips in the 1990s, it is a relatively slow-speed bus-communication protocol (up to 400kbps or 1Mbps in its basic form). It is built into some microcontrollers. The standard is more uniformly and rigorously defined than SPI.
+• Up/down, also sometimes known as pushbutton or increment/decrement protocol.
+
+The one feature that all versions of SPI have in common is that a series of high/low pulses is interpreted by the chip as a set of bits whose value defines a tap point in the resistor ladder. In computer terminology, every tap point has an address.
+
+Typically, there will be a chip select pin, identified as CS; a serial data input pin, identified as SDA, SI, DIN, or a similar acronym; and a serial clock pin, identified as SCL, SCLK, or SCK, which must receive a stream of pulses to which the high/low data input pulses must be synchronized.
+
+In addition, the SPI protocol allows bidirectional (duplex) serial communication. 
+
+CS is usually, but not always, pulled low to activate the digital potentiometer for input. A series of low or high states is then applied to the datainput pin. Each time the clock input changes state (usually on the rising edge of the clock pulse) the state of the data input is copied to a shift register inside the chip. After all the bits have been clocked in, CS can change from low to high, causing the contents of the shift register to be copied into a decoder section of the chip. The first bit received becomes the most significant bit in the decoder. The value of the eight bits is decoded, and the chip connects the W pin directly to the corresponding tap along the ladder of 255 internal resistors.
+
+Achieving Higher Resolution For sensitive applications where a resolution with more than 1,024 steps is required, multiple digital potentiometers with different step values can be combined.
+
+![](images/20191103_03November2019_19h07m.png)
+
+In this circuit, the wipers of P2 and P3 must be moved in identical steps, so that the total resistance between the positive power supply and negative ground remains constant.
+
+# Timer
+
+A device that creates a single timed pulse, or a series of timed pulses with timed intervals between them, is properly known as a multivibrator, although the generic term timer has become much more common and is used here
+
+A monostable timer emits a single timed pulse of fixed length in response to a triggering input that is usually of shorter duration. Many monostable timers are also capable of running in astable mode, in which the timer spontaneously emits an ongoing stream of timed pulses with timed gaps between them.
+
+In monostable mode, the timer emits a pulse in response to a change from high to low voltage (or, less commonly, from low to high voltage) at a trigger pin.
+
+The length of the pulse will be determined by external components, and is independent of the duration of the triggering event, although in some cases, an output pulse may be prolonged by retriggering the timer prematurely.
+
+A monostable timer can control the duration of an event, such as the time for which a light remains on after it has been triggered by a motion sensor.
+
+Astable Mode In astable mode, a timer will generally trigger itself as soon as power is connected, without any need for an external stimulus. However, the output can be suppressed by applying an appropriate voltage to a reset pin.
+
+The duration of a single pulse in monostable mode, or the frequency of pulses in astable mode, is most commonly determined by an external RC network consisting of a resistor in series with a capacitor. 
+
+A comparator inside the timer is often used to detect when the potential on the capacitor reaches a reference voltage that is established by a voltage divider inside the chip.
+
+## NE555
+
+![](images/20191103_03November2019_19h27m.png)
+
+The resistances inside the timer function as a voltage divider, providing a reference of 1/3 of V+ to the noninverting pin of Comparator A and 2/3 of V+ to the inverting pin of Comparator B
+
+When power is initially supplied to the timer, if the Input pin is at a high state, Comparator A has a low output, and the flip-flop remains in its “up” position, allowing the Output pin to remain in a low state. The flip-flop also grounds the lower end of R1, which prevents any charge from accumulating on capacitor C1.
+
+If the state of the Input pin is pulled down externally to a voltage less than 1/3 of V+, Comparator A now creates a high output that changes the flip-flop to its “down” position, sending a high signal out through the Output pin. At the same time, C1 is no longer grounded, and begins to charge at a rate determined by its own size and by the value of R1. When the charge on the capacitor exceeds 2/3 of V+, it activates Comparator B, which forces the flip-flop into its “up” position. The Output pin goes low, C1 discharges itself into the Discharge pin, and the timer’s cycle is at an end.
+
+The low voltage on the Input pin of the timer must end before the end of the output cycle. If the voltage on the Input pin remains low, it will re-trigger the timer, prolonging the output pulse.
+
+The Reset pin should normally be held high, either by being connected directly to positive supply voltage (if the reset function will not be needed) or by using a pullup resistor. If the Reset pin is pulled low, this will always interrupt an output pulse regardless of the timer’s current status.
+
+555 Astable Operation In Figure 9-3, the 555 timer chip is shown with external components and connections to run it in astable mode. The pin names remain the same but have been omitted from this diagram because of limited space. The labeling of the two external resistors and capacitor as R1, R2, and C1 is universal in datasheets and manufacturers’ documentation.
+
+When the timer is powered up initially, capacitor C1 has not yet accumulated any charge. Consequently, the state of the Threshold pin is low. But the Threshold pin is connected externally with the Input pin, for astable operation. Consequently, the Input pin is low, which forces the flip-flop into its “down” state, creating a high output. This happens almost instantaneously.
+
+![](images/20191103_03November2019_19h37m.png)
+
+While the flip-flop is “down,” the Discharge pin is not grounded, and current flowing through R1 and R2 begins to charge the capacitor. When the charge exceeds 2/3 of positive supply voltage, Comparator B forces the flip-flop into its “up” position. This ends the high pulse on the Output pin, and starts to drain the charge from the capacitor through R2, into the Discharge pin. However, the voltage on the capacitor is still being shared by the Input pin, and when it diminishes to 1/3 of V+, the Input pin reactivates Comparator A, starting the cycle over again.
+
+When power is first connected to the timer, C1 must initially charge from an assumed state of zero potential to 2/3 V+. **Because subsequent cycles will begin when the capacitor is at 1/3 V+, the first high output pulse from the timer will be slightly longer than subsequent output pulses**
+
+Still, the longer initial pulse can be noticeable when the timer is running slowly.
+
+Because the capacitor charges through R1 and R2 in series, but discharges only through R2, the length of each positive output pulse in astable mode is always greater than the gap between pulses. Two strategies have been used to overcome this limitation.
+
+#5555 Timer 
+
+The 5555 contains a digital counter that enables it to time very long periods. Its full part number is 74HC5555 or 74HCT5555, although these numbers may be preceded or followed by letter combinations identifying the manufacturer. **It is not pin-compatible with a 555 timer.**
+
+4047B Timer 
+
+This 14-pin CMOS chip was introduced in an effort to address some of the quirks of the 555 timer while also providing additional features.
+
+Dual Monostable Timers Various timers that run only in monostable mode are available in dual format (i.e., two timers in one chip). This format became popular partly because two monostable timers can trigger each other to create an astable output, in which the pulse width, and the gap between pulses, can be set by a separate resistor-capacitor pair on each timer. This allows greater flexibility than is available when using a 555 timer.
+
+When choosing values for R1 and R2, a minimum for each resistor is 5K, although 10K is preferred. Lower values will increase power consumption, and may also allow overload of the internal electronics when the chip sinks current from C1
+
+A high-value capacitor may cause the timer to function less accurately and predictably, because large capacitors generally allow more leakage. This means that the capacitor will be losing charge at the same time that it is being charged through R1 + R2. If these resistors have high values, and the capacitor has a value of 100µF or more, the rate of charge may be so low that it is comparable with the rate of leakage. For this reason, a 555 timer is not a good choice for timing intervals much greater than a minute. If a largevalue capacitor is used, tantalum is preferable to electrolytic.
