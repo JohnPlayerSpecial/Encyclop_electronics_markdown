@@ -206,14 +206,14 @@ bearing rolls to either end of a central rocker arm
 when the switch is turned. Rocker switches are
 often used as power on-off switches.
 
-<img src="images/04October2019_17h06m.png" style="zoom:50%;" />
+<img src="images/04October2019_17h06m.png" style="zoom: 33%;" />
 
 ## Toggle Switch
-<img src="images/04October2019_17h10m.png" style="zoom:50%;" />
+<img src="images/04October2019_17h10m.png" style="zoom: 33%;" />
 
 
 ## SIP & DIP
-<img src="images/04October2019_17h15m.png" style="zoom:50%;" /> <img src="images/04October2019_17h15xcm.png" style="zoom:50%;" />
+<img src="images/04October2019_17h15m.png" style="zoom: 33%;" /> <img src="images/04October2019_17h15xcm.png" style="zoom: 33%;" />
 
 An application for two limit switches with a DC
 motor and two rectifier diodes is shown in
@@ -248,13 +248,13 @@ duration, without risk of burnout when the mo­
 tor reaches the end of its travel. It has been used
 for applications such as raising and lowering
 powered windows in an automobile.
-<img src="images/04October2019_17h24m.png" style="zoom:50%;" />
+<img src="images/04October2019_17h24m.png" style="zoom: 39%;" />
 
 ## Deviatore
 
 
 
-<img src="images/04October2019_17h30m.png" style="zoom:50%;" />
+<img src="images/04October2019_17h30m.png" style="zoom: 33%;" />
 
 ## Arcing
 In DC circuits, arcing can be re­
@@ -274,7 +274,7 @@ is an entirely passive component that does not
 require any additional electronics for its func­
 tionality.
 ## Rotary DIP Switch
-<img src="images/04October2019_17h43m.png" style="zoom:33%;" />
+<img src="images/04October2019_17h43m.png" style="zoom: 25%;" />
 
 ## Pushwheel and Thumbwheel
 A pushwheel switch is a simple electromechanical
@@ -1308,7 +1308,7 @@ This is relatively easy to do. The op-amp simply needs a potential difference to
 
 ## Bad connection of unused sections/ channels
 
-![](images/20191103_03November2019_17h01m.png)
+<img src="images/20191103_03November2019_17h01m.png" style="zoom:33%;" />
 
 # Digital Potentiometer
 
@@ -1345,7 +1345,7 @@ CS is usually, but not always, pulled low to activate the digital potentiometer 
 
 Achieving Higher Resolution For sensitive applications where a resolution with more than 1,024 steps is required, multiple digital potentiometers with different step values can be combined.
 
-![](images/20191103_03November2019_19h07m.png)
+<img src="images/20191103_03November2019_19h07m.png" style="zoom:33%;" />
 
 In this circuit, the wipers of P2 and P3 must be moved in identical steps, so that the total resistance between the positive power supply and negative ground remains constant.
 
@@ -1369,7 +1369,7 @@ A comparator inside the timer is often used to detect when the potential on the 
 
 ## NE555
 
-![](images/20191103_03November2019_19h27m.png)
+<img src="images/20191103_03November2019_19h27m.png" style="zoom:33%;" />
 
 The resistances inside the timer function as a voltage divider, providing a reference of 1/3 of V+ to the noninverting pin of Comparator A and 2/3 of V+ to the inverting pin of Comparator B
 
@@ -1385,7 +1385,7 @@ The Reset pin should normally be held high, either by being connected directly t
 
 When the timer is powered up initially, capacitor C1 has not yet accumulated any charge. Consequently, the state of the Threshold pin is low. But the Threshold pin is connected externally with the Input pin, for astable operation. Consequently, the Input pin is low, which forces the flip-flop into its “down” state, creating a high output. This happens almost instantaneously.
 
-![](images/20191103_03November2019_19h37m.png)
+<img src="images/20191103_03November2019_19h37m.png" style="zoom:33%;" />
 
 While the flip-flop is “down,” the Discharge pin is not grounded, and current flowing through R1 and R2 begins to charge the capacitor. When the charge exceeds 2/3 of positive supply voltage, Comparator B forces the flip-flop into its “up” position. This ends the high pulse on the Output pin, and starts to drain the charge from the capacitor through R2, into the Discharge pin. However, the voltage on the capacitor is still being shared by the Input pin, and when it diminishes to 1/3 of V+, the Input pin reactivates Comparator A, starting the cycle over again.
 
@@ -1408,3 +1408,110 @@ Dual Monostable Timers Various timers that run only in monostable mode are avail
 When choosing values for R1 and R2, a minimum for each resistor is 5K, although 10K is preferred. Lower values will increase power consumption, and may also allow overload of the internal electronics when the chip sinks current from C1
 
 A high-value capacitor may cause the timer to function less accurately and predictably, because large capacitors generally allow more leakage. This means that the capacitor will be losing charge at the same time that it is being charged through R1 + R2. If these resistors have high values, and the capacitor has a value of 100µF or more, the rate of charge may be so low that it is comparable with the rate of leakage. For this reason, a 555 timer is not a good choice for timing intervals much greater than a minute. If a largevalue capacitor is used, tantalum is preferable to electrolytic.
+
+## Separate Control of High and Low Output Times
+
+ In Figure 9-15, a bypass diode has been added around R2. The capacitor now charges primarily through R1, as the diode has a much lower effective resistance than R2. It discharges only through R2, as the diode blocks current in that direction. Consequently, the length of the high output pulse can be adjusted with the value of R1 only, while the length of the low output pulse can be adjusted with the value of R2 only. The duration of the high output can be lower than, or equal to, the duration of the low output, which is not possible with the basic configuration of components in Figure 9-14.
+
+<img src="images/20191104_04November2019_22h11m.png" style="zoom:33%;" />
+
+![](images/20191108_08November2019_10h01m.png)
+
+# Flip Flop
+
+Transistors enable logic gates; logic gates enable flip-flops; and flip-flops enable many mathematical, storage, and retrieval functions in digital computing.
+
+A flip-flop is the smallest possible unit of memory. It can store a single bit of data, represented by either a high or low logic state.
+
+
+
+Flip-flops are especially useful in counters, shift registers, and serial-to-parallel converters.
+
+The asynchronous SR flip-flop is of primary use in debouncing switches. Examples are the single MAX6816, dual MAX6817, and octal MAX6818.
+
+# Shift Register
+
+A shift register most commonly is designed to store eight bits, although some store four.
+
+When a pulse from an external clock is received by the shift register, all of the bits in storage are moved along one step, from each flip-flop to the next.
+
+It is still useful for purposes of serial-parallel or parallel-serial conversion, and for small tasks such as scanning a matrixencoded keyboard or keypad.
+
+A shift register generally consists of a chain of Dtype flip-flops. See the entry describing flipflops
+
+The simplest shift register functions as a serial-in, serial-out device, abbreviated with the acronym SISO.
+
+Parallel In, Serial Out 
+
+A minority of shift registers are able to function as parallel-serial converters (parallel in, serial out, represented by the acronym PISO)
+
+Buffering 
+
+A shift register may also be used as a buffer between two circuits where the clock speeds are different. Digits are clocked in by the first circuit, then clocked out by the second. Some shift registers allow two clock inputs and can be used for this purpose.
+
+# Counter
+
+A counter can be used to count events, or can measure time in convenient intervals if it is connected with a component such as a quartz crystal that operates at a precise and reliable frequency. The counter receives input pulses (usually referred to as a clock input) and counts a predetermined number of them before restarting from the beginning.
+
+A counter is built from a chain of flip-flops, with each one triggering the next. JK, T-type, or Dtype flip-flops may be used. For a thorough description of a flip-flop, see Chapter 11. In Figure 13-3, a D-type flip-flop is shown, triggered by each rising clock pulse.
+
+![](images/20191108_08November2019_13h21m.png)
+
+
+
+In a counter, to obtain a modulus that is not a power of two, logic gates inside the chip can intercept a particular value (such as 1010 binary, which is 10 decimal) and use this as a signal to restart the count at zero. External connections to the chip can achieve the same purpose.
+
+All counter chips use binary code internally, and the number of bits (binary digits) in the counter’s modulus will be the same as the number of internal flip-flops. A 4-bit counter (the usual minimum) will have a modulus of 24 which is 16. A 21bit counter (the maximum typically available) will have a modulus of 221 which is 2,097,152. For higher moduli, counters can be chained together, each sending a carry signal to the next. This is known as a cascade.
+
+A decade counter is a modulus-10 binary counter
+
+To intercept binary 1010 (decimal 10), an internal NAND gate is used. Its output goes low when its two inputs, from Q1 and Q3, go high. The output from the NAND immediately activates the CLR function on all the flip-flops, so that as soon as the decade counter reaches 1010 (decimal 10), it resets itself to 0.
+
+![](images/20191109_09November2019_13h17m.png)
+
+The counter’s datasheet should include a state diagram showing how the counter will deal with this situation. It may reset itself to a valid value after a maximum of two steps, but this can still cause confusion, depending on the application
+
+## Clock Sources
+
+ The clock input may be provided by a timer chip or by an RC network, which has the advantage of being able to run at a relatively low speed for purposes where this is desirable. It may alternatively be provided by a quartz crystal oscillating at a much higher frequency such as 1MHz. Successive counters may be necessary to reduce this value, depending on the application.
+
+![](images/20191109_09November2019_13h24m.png)
+
+Descending Output 
+
+Most components only create an ascending count. The output can be converted to a descending count by passing each binary state through an inverter, but this will only work properly if the modulus is equal to the number of states. In a BCD counter, its inverted outputs will count from decimal 15 to decimal 6, not from decimal 9 to decimal 0.
+
+With suitable logic, this can enable a userspecified delay period
+
+Programmable Counters 
+
+A programmable counter can usually allow a modulus ranging from 2 to more than 10,000. The counter counts down by dividing an initial number repeatedly with a value that is preset with binary inputs. An example is the 4059B chip.
+
+Lock-Out This is the condition which occurs if a counter with a shortened modulus is loaded with a binary state that is out of its range. Consult the datasheet and study its state diagram to determine the most likely outcome if this problem occurs.
+
+## Asynchronous Artifacts 
+
+Because the flip-flops in an asynchronous (ripple) counter do not change simultaneously, they create very brief false outputs while the ripple process is taking place. In a 4-bit counter, the binary number 0111 (decimal 7) should be followed by 1000 (decimal 8). However, the rightmost digit (i.e., the least significant bit) will change to a 0 initially, creating 0110 as a momentary binary output (decimal 6). The carry operation will then change the next digit to a 0, creating 0100 (decimal 4). The carry operation continues, changing the next digit to a 0, creating 0000. Finally the operation completes by creating 1000 as the correct output.
+
+# Encoder
+
+An encoder is a logic chip that receives an input consisting of an active logical state on one of at least four input pins, which have decimal values from 0 upward in increments of 1. The encoder converts the active pin number into a binary value represented by logic states on at least two output pins. This behavior is opposite to that of a decoder.
+
+4-to-2 encoder
+
+8-to-3 encoder
+
+16-to-4 encoder 
+
+In the early days of computing, encoders processed interrupts.
+
+However, they are still useful in small devices—for example, if a large number of inputs must be handled by a microcontroller that has insufficient pins to receive data from each individually.
+
+In an encoder, an active logic state is applied to one of four or more input pins, while the rest remain in an inactive logic state. The input pin number is converted to a binary code which is expressed as a pattern of logic states on two or more output pins.
+• In a decoder, a binary number is applied as a pattern of logic states on two or more input pins. This value determines which one of four or more output pins will have an active logic state, while the rest remain in an inactive logic state.
+• A multiplexer can connect a choice of multiple inputs to a single output, for data transfer. The logic state of an enable pin, or a binary number applied as a pattern of logic states to multiple control pins, chooses which input should be connected with the output pin. The alternative term data selector evokes the function of this device more clearly.
+
+An analog multiplexer may allow its inputs and outputs to be swapped, in which case it becomes a demultiplexer. It can connect a single input to one of multiple outputs, for data transfer. The logic state of an enable pin, or a binary number applied as a pattern of logic states to multiple control pins, chooses which output should be used. The alternative term data distributor evokes the function of this device more clearly.
+
+![](images/20191109_09November2019_15h10m.png)
+
