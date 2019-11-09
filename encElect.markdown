@@ -1497,11 +1497,11 @@ Because the flip-flops in an asynchronous (ripple) counter do not change simulta
 
 An encoder is a logic chip that receives an input consisting of an active logical state on one of at least four input pins, which have decimal values from 0 upward in increments of 1. The encoder converts the active pin number into a binary value represented by logic states on at least two output pins. This behavior is opposite to that of a decoder.
 
-4-to-2 encoder
+* 4-to-2 encoder
 
-8-to-3 encoder
+* 8-to-3 encoder
 
-16-to-4 encoder 
+* 16-to-4 encoder 
 
 In the early days of computing, encoders processed interrupts.
 
@@ -1514,4 +1514,92 @@ In an encoder, an active logic state is applied to one of four or more input pin
 An analog multiplexer may allow its inputs and outputs to be swapped, in which case it becomes a demultiplexer. It can connect a single input to one of multiple outputs, for data transfer. The logic state of an enable pin, or a binary number applied as a pattern of logic states to multiple control pins, chooses which output should be used. The alternative term data distributor evokes the function of this device more clearly.
 
 ![](images/20191109_09November2019_15h10m.png)
+
+![](images/20191109_09November2019_15h12m.png)
+
+Cascaded Encoders
+
+ Encoders are often provided with features to facilitate handling additional inputs via multiple chips. Typically, a second Enable pin is provided, as an output that connects with the Enable input of the preceding chip. This preserves the priority function, so that an input on the second chip prevents any additional input to the first chip from affecting the output. In a datasheet, the enable pins may be labeled EIN and EOUT, or EI and EO.
+In addition, a GS pin will be included, meaning “Group Select.” It is logically active only when the encoder is enabled and at least one input is active. The GS pin of the most-significant encoder provides an additional binary digit.
+The outputs from two encoders can be linked via OR gates, as shown in Figure 14-6, where the lower chip’s GS output provides the most significant bit of a four-bit binary number.
+
+![](images/20191109_09November2019_15h15m.png)
+
+# Decoder
+
+A decoder receives a binary-coded number on two or more input pins. It decodes that number and expresses it by activating one of at least four output pins.
+
+Decoders with 2, 3, or 4 input pins are common. To handle a binary input greater than 1111 (decimal 15), decoders can be chained together,
+
+* 2-to-4 decoder
+
+* 3-to-8 decoder
+
+* 4-to-10 decoder
+
+* 4-to-16 decoder
+
+The input pins of a decoder can be driven by a counter that has a binary-coded output. A decoder can also be driven by a microcontroller, which may have an insufficient number of output pins to control a variety of devices. Two, three, or four of the outputs can be used to represent a binary number which is passed through the decoder to activate the devices one at a time, perhaps with transistors or Darlington arrays introduced to handle the load. 
+
+A shift register can be used for a similar purpose, but often has only one pin for input
+
+LED Driver A special case is a seven-segment decoder designed to drive a seven-segment LED display numeral. A binary-coded decimal number on four input pins is converted to a pattern of outputs appropriate for lighting the segments of the display that will form a number from decimal 0 through 9.
+
+(The Latch Enable pin freezes the current state of the outputs (i.e., it latches them) when it is held low.)
+
+Generally speaking, pins labeled A0, A1, A2… in a datasheet are often the binary inputs (although A, B, C… may be used), with A0 designating the least significant bit. Outputs are usually labeled Y, and are activated in sequence from Y0 when the binary input starts counting upward.
+
+![](images/20191109_09November2019_15h32m.png)
+
+![](images/20191109_09November2019_15h34m.png)
+
+![](images/20191109_09November2019_15h35m.png)
+
+# Multiplexer 
+
+A multiplexer can select one of two or more input pins, and connect it internally with an output pin.
+
+All multiplexers are digitally controlled devices, but may be described as either digital or analog depending how they process the input signal. A digital multiplexer creates an output that is adjusted to logic-high or logic-low within the limits of its logic family. An analog multiplexer does not impose any processing on the voltage, and passes along any fluctuations. Thus, it can be used with alternating current.
+
+![](images/20191109_09November2019_15h39m.png)
+
+Because an analog multiplexer merely switches a flow of current, it can be bidirectional; in other words, it can function as a demultiplexer, in which case the input is applied to the pole of the (imaginary) internal switch and outputs are taken from the terminals.
+
+## Differential Multiplexer 
+
+A differential multiplexer contains multiple switches that are differentiated from one another (i.e., they are electrically isolated, although they are controlled by the same set of select pins). A differential multiplexer is conceptually similar to a rotary switch with two or more decks controlled by a single shaft.
+
+![](images/20191109_09November2019_15h42m.png)
+
+Modern multiplexers are often found switching high-frequency data streams in audio, telecommunications, or video applications.
+
+The multiple inputs to a multiplexer are referred to as channels. Almost always, the number of channels is 1, 2, 4, 8, or 16. A 1-channel component is only capable of “on” or “off” modes and functions similarly to a SPST switch.
+
+The switch analogy is appropriate in that when an output from a multiplexer is not connected internally (i.e., its switch is “open”) it is effectively an open circuit. However, some multiplexers contain pullup resistors to give each output a defined state. This can be an important factor in determining whether the multiplexer is suitable for a particular application.
+
+![](images/20191109_09November2019_15h45m.png)
+
+below **multiplexer**
+
+![](images/20191109_09November2019_15h46m.png)
+
+below **demultiplexer**
+
+![](images/20191109_09November2019_15h57m.png)
+
+Most multiplexers are “break before make” devices, where one input is disconnected before the next input is connected. However, some exceptions exist, and datasheets should be checked for this.
+
+The on-resistance is the resistance imposed by the analog multiplexer on the signal flowing through it. While modern, specialized analog multiplexers may have an on-resistance as low as 5Ω, these are relatively unusual. An on-resistance of 100Ω to 200Ω is more common.
+
+Leakage current is the small amount of current (often measured in picoamperes) that the solidstate switch will pass when it is in its “off” state. This should be insignificant except when very high-impedance loads are used.
+
+A multiplexer can also be used as a digital volume control by switching an audio signal among a variety of resistances, similar to a digital potentiometer. In this application, the possible presence of pullup resistors inside the multiplexer must be considered.
+
+Multiplexers may be cascaded to increase the inputs-to-outputs ratio.
+
+Modern multiplexers are found on computer boards where they choose among video output ports, or as PCI express channel switches.
+
+**A multiplexer may be used as a parallel-to-serial converter**
+
+In telecommunications, a multiplexer can sample voice signals from multiple separate inputs and combine them into a digital stream that can be transmitted at a faster bit rate over a single channel.
 
